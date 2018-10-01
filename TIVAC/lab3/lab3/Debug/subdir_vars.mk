@@ -12,27 +12,27 @@ LIB_SRCS += \
 C:/ti/tivaware_c_series_2_1_4_178/driverlib/ccs/Debug/driverlib.lib 
 
 C_SRCS += \
-../main.c \
+../main_t2.c \
 ../tm4c123gh6pm_startup_ccs.c 
 
 C_DEPS += \
-./main.d \
+./main_t2.d \
 ./tm4c123gh6pm_startup_ccs.d 
 
 OBJS += \
-./main.obj \
+./main_t2.obj \
 ./tm4c123gh6pm_startup_ccs.obj 
 
 OBJS__QUOTED += \
-"main.obj" \
+"main_t2.obj" \
 "tm4c123gh6pm_startup_ccs.obj" 
 
 C_DEPS__QUOTED += \
-"main.d" \
+"main_t2.d" \
 "tm4c123gh6pm_startup_ccs.d" 
 
 C_SRCS__QUOTED += \
-"../main.c" \
+"../main_t2.c" \
 "../tm4c123gh6pm_startup_ccs.c" 
 
 
