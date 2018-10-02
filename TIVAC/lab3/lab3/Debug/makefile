@@ -10,7 +10,7 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
-"./main_t2.obj" \
+"./main_t1.obj" \
 "./tm4c123gh6pm_startup_ccs.obj" \
 "C:/ti/tivaware_c_series_2_1_4_178/driverlib/ccs/Debug/driverlib.lib" \
 "../tm4c123gh6pm.cmd" \
@@ -156,8 +156,8 @@ lab3.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "main_t2.obj" "tm4c123gh6pm_startup_ccs.obj" 
-	-$(RM) "main_t2.d" "tm4c123gh6pm_startup_ccs.d" 
+	-$(RM) "main_t1.obj" "tm4c123gh6pm_startup_ccs.obj" 
+	-$(RM) "main_t1.d" "tm4c123gh6pm_startup_ccs.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

@@ -10,6 +10,9 @@ uint8_t ui8PinData=2;
 
 int main(void)
 {
+    // constant for clock delay
+    double DIVISOR = 7.059;
+
     // ==================================================
     // Configure system clock
     // CLK = 40MHz = (400MHz PLL / (5 * 2))
@@ -29,17 +32,21 @@ int main(void)
          * DELAY: ((seconds) / ( (1/CLK) * 3)
          *
          * For 0.425 seconds
-         * ((0.425) / ( (1/CLK) * 3) = 56.7x10^5
+         * ((0.425) / ( (1/40MHz) * 3) = 56.7x10^5
          *
          * So close approximation gives
-         * 40MHz / 7 = 57.1x10^5
+         * 40MHz / x = 56.7x10^5
+         * x = 7.059 => DIVISOR
          */
-        SysCtlDelay(SysCtlClockGet() / 7);
+        SysCtlDelay(SysCtlClockGet() / DIVISOR);
+
+        // debugging variable to confirm timing
+        uint32_t SYS_DELAY = SysCtlClockGet() / DIVISOR;
 
         GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3, 0x00);
 
         // delay to turn off LEDs
-        SysCtlDelay(SysCtlClockGet() / 7);
+        SysCtlDelay(SysCtlClockGet() / DIVISOR);
 
         // cycle through R, G, and B pin data
         if(ui8PinData==8) {ui8PinData=2;} else {ui8PinData=ui8PinData*2;}
