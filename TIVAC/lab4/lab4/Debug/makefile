@@ -4,13 +4,13 @@
 
 SHELL = cmd.exe
 
-CG_TOOL_ROOT := C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.2.LTS
+CG_TOOL_ROOT := C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS
 
 GEN_OPTS__FLAG := 
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
-"./main_t3.obj" \
+"./main_t2.obj" \
 "./tm4c123gh6pm_startup_ccs.obj" \
 "C:/ti/tivaware_c_series_2_1_4_178/driverlib/ccs/Debug/driverlib.lib" \
 "../tm4c123gh6pm.cmd" \
@@ -135,15 +135,15 @@ all: lab4.out
 lab4.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: ARM Linker'
-	"C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.2.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -g --define=PART_TM4C123GH6PM --display_error_number --diag_wrap=off --diag_warning=225 -z -m"lab4.map" --heap_size=0 --stack_size=100 -i"C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.2.LTS/lib" -i"C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.2.LTS/include" --reread_libs --display_error_number --diag_wrap=off --warn_sections --xml_link_info="lab4_linkInfo.xml" --rom_model -o "lab4.out" $(ORDERED_OBJS)
+	"C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -g --define=PART_TM4C123GH6PM --display_error_number --diag_wrap=off --diag_warning=225 -z -m"lab4.map" --heap_size=0 --stack_size=100 -i"C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/lib" -i"C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/include" --reread_libs --display_error_number --diag_wrap=off --warn_sections --xml_link_info="lab4_linkInfo.xml" --rom_model -o "lab4.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "main_t3.obj" "tm4c123gh6pm_startup_ccs.obj" 
-	-$(RM) "main_t3.d" "tm4c123gh6pm_startup_ccs.d" 
+	-$(RM) "main_t2.obj" "tm4c123gh6pm_startup_ccs.obj" 
+	-$(RM) "main_t2.d" "tm4c123gh6pm_startup_ccs.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

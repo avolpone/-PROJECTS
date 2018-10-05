@@ -64,3 +64,11 @@ void Timer0IntHandler(void)
 		GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 4);
 	}
 }
+
+void PortFPin0IntHandler(void)
+{
+}
+
+void Timer1IntHandler(void)
+{
+}
